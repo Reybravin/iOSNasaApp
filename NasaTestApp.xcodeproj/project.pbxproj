@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */; };
+		F62C2AB726D68ED5005EEA92 /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB626D68ED5005EEA92 /* Apod.swift */; };
+		F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB826D69375005EEA92 /* EpicImage.swift */; };
 		F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */; };
-		F6FCC7DF26AD4F910064E87C /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7DE26AD4F910064E87C /* DocumentBrowserViewController.swift */; };
-		F6FCC7E126AD4F910064E87C /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7E026AD4F910064E87C /* DocumentViewController.swift */; };
 		F6FCC7E326AD4F910064E87C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7E226AD4F910064E87C /* Document.swift */; };
 		F6FCC7E626AD4F910064E87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E426AD4F910064E87C /* Main.storyboard */; };
 		F6FCC7E826AD4F940064E87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E726AD4F940064E87C /* Assets.xcassets */; };
 		F6FCC7EB26AD4F940064E87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E926AD4F940064E87C /* LaunchScreen.storyboard */; };
 		F6FCC7F626AD4F940064E87C /* NasaTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7F526AD4F940064E87C /* NasaTestAppTests.swift */; };
 		F6FCC80126AD4F940064E87C /* NasaTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC80026AD4F940064E87C /* NasaTestAppUITests.swift */; };
+		F6FCC81426AD50E00064E87C /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC81326AD50E00064E87C /* PhotoListViewController.swift */; };
+		F6FCC81626AD50ED0064E87C /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC81526AD50ED0064E87C /* PhotoDetailViewController.swift */; };
+		F6FCC81826AD516D0064E87C /* PhotoDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC81726AD516D0064E87C /* PhotoDetailViewController.storyboard */; };
+		F6FCC81D26AD52930064E87C /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC81C26AD52930064E87C /* UIView+Ext.swift */; };
+		F6FCC81F26AD53230064E87C /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC81E26AD53230064E87C /* UITableView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDataRepository.swift; sourceTree = "<group>"; };
+		F62C2AB626D68ED5005EEA92 /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
+		F62C2AB826D69375005EEA92 /* EpicImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicImage.swift; sourceTree = "<group>"; };
 		F6FCC7D926AD4F910064E87C /* NasaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F6FCC7DE26AD4F910064E87C /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		F6FCC7E026AD4F910064E87C /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		F6FCC7E226AD4F910064E87C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		F6FCC7E526AD4F910064E87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6FCC7E726AD4F940064E87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		F6FCC7FC26AD4F940064E87C /* NasaTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NasaTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FCC80026AD4F940064E87C /* NasaTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaTestAppUITests.swift; sourceTree = "<group>"; };
 		F6FCC80226AD4F940064E87C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6FCC81326AD50E00064E87C /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		F6FCC81526AD50ED0064E87C /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		F6FCC81726AD516D0064E87C /* PhotoDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetailViewController.storyboard; sourceTree = "<group>"; };
+		F6FCC81C26AD52930064E87C /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		F6FCC81E26AD53230064E87C /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F62C2AB426D68EBF005EEA92 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2AB526D68ECA005EEA92 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F62C2AB526D68ECA005EEA92 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2AB626D68ED5005EEA92 /* Apod.swift */,
+				F62C2AB826D69375005EEA92 /* EpicImage.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		F6FCC7D026AD4F910064E87C = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +130,10 @@
 		F6FCC7DB26AD4F910064E87C /* NasaTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				F62C2AB426D68EBF005EEA92 /* Domain */,
+				F6FCC80E26AD4FF10064E87C /* Presentation */,
 				F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */,
-				F6FCC7DE26AD4F910064E87C /* DocumentBrowserViewController.swift */,
-				F6FCC7E026AD4F910064E87C /* DocumentViewController.swift */,
 				F6FCC7E226AD4F910064E87C /* Document.swift */,
-				F6FCC7E426AD4F910064E87C /* Main.storyboard */,
 				F6FCC7E726AD4F940064E87C /* Assets.xcassets */,
 				F6FCC7E926AD4F940064E87C /* LaunchScreen.storyboard */,
 				F6FCC7EC26AD4F940064E87C /* Info.plist */,
@@ -129,6 +157,44 @@
 				F6FCC80226AD4F940064E87C /* Info.plist */,
 			);
 			path = NasaTestAppUITests;
+			sourceTree = "<group>";
+		};
+		F6FCC80E26AD4FF10064E87C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F6FCC81A26AD52080064E87C /* Main */,
+				F6FCC81026AD50040064E87C /* DetailView */,
+				F6FCC81B26AD52850064E87C /* Extensions */,
+				F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F6FCC81026AD50040064E87C /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				F6FCC81526AD50ED0064E87C /* PhotoDetailViewController.swift */,
+				F6FCC81726AD516D0064E87C /* PhotoDetailViewController.storyboard */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		F6FCC81A26AD52080064E87C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F6FCC7E426AD4F910064E87C /* Main.storyboard */,
+				F6FCC81326AD50E00064E87C /* PhotoListViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F6FCC81B26AD52850064E87C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F6FCC81C26AD52930064E87C /* UIView+Ext.swift */,
+				F6FCC81E26AD53230064E87C /* UITableView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6FCC81826AD516D0064E87C /* PhotoDetailViewController.storyboard in Resources */,
 				F6FCC7EB26AD4F940064E87C /* LaunchScreen.storyboard in Resources */,
 				F6FCC7E826AD4F940064E87C /* Assets.xcassets in Resources */,
 				F6FCC7E626AD4F910064E87C /* Main.storyboard in Resources */,
@@ -262,8 +329,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FCC7E326AD4F910064E87C /* Document.swift in Sources */,
-				F6FCC7E126AD4F910064E87C /* DocumentViewController.swift in Sources */,
-				F6FCC7DF26AD4F910064E87C /* DocumentBrowserViewController.swift in Sources */,
+				F62C2AB726D68ED5005EEA92 /* Apod.swift in Sources */,
+				F6FCC81626AD50ED0064E87C /* PhotoDetailViewController.swift in Sources */,
+				F6FCC81D26AD52930064E87C /* UIView+Ext.swift in Sources */,
+				F6FCC81F26AD53230064E87C /* UITableView+Ext.swift in Sources */,
+				F6FCC81426AD50E00064E87C /* PhotoListViewController.swift in Sources */,
+				F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */,
+				F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */,
 				F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,8 +512,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AH2JU84BM2;
+				DEVELOPMENT_TEAM = 5RTAWRP7KM;
 				INFOPLIST_FILE = NasaTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sachuk.com.NasaTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -459,8 +533,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AH2JU84BM2;
+				DEVELOPMENT_TEAM = 5RTAWRP7KM;
 				INFOPLIST_FILE = NasaTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,6 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sachuk.com.NasaTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
