@@ -35,14 +35,74 @@ final class NasaDataRepository : NasaDataRepositoryInterface {
     private let apiKey : String = "KK2KcxX66KsS1jjiVH7gQDdJWcBHSxyE1S93QMOL"
     
     private let defaultSession = URLSession(configuration: .default)
-    private var dataTask: URLSessionDataTask?
-    private var epicImagesDataTask: URLSessionDataTask?
+    private var dataTask: URLSessionTask?
+    private var epicImagesDataTask: URLSessionTask?
 
     private var errorMessage : String = ""
     private var tracks = ""
 }
 
 extension NasaDataRepository {
+    
+//    func fetchApod(completion : @escaping (Result<Apod, Error>) -> ()) {
+//        // 1
+//        dataTask?.cancel()
+//
+//        // 2
+//        guard var urlComponents = URLComponents(string: "\(baseURL + "/planetary/apod")") else {
+//            return
+//        }
+//
+//        let queryParameters : [String : String] = [
+//            "api_key" : apiKey,
+//            "thumbs" : "\(true)"
+//        ]
+//
+//        let queryItems = queryParameters.map({ URLQueryItem(name: $0.key, value: $0.value) })
+//        urlComponents.queryItems = queryItems
+//
+//        // 3
+//        guard let url = urlComponents.url else {
+//            return
+//        }
+//        // 4
+//        dataTask = defaultSession.dataTask(with: url) { [weak self] data, response, error in
+//
+//            guard let strongSelf = self else { return }
+//
+//            defer {
+//                strongSelf.dataTask = nil
+//            }
+//
+//            // 5
+//            if let error = error {
+//                completion(.failure(error))
+//            } else if let response = response as? HTTPURLResponse {
+//                switch response.statusCode {
+//                case 200:
+//                    if let data = data {
+//                        do {
+//                            let result = try JSONDecoder().decode(Apod.self, from: data)
+//                            // 6
+//                            DispatchQueue.main.async {
+//                                completion(.success(result))
+//                            }
+//                        } catch (let error) {
+//                            completion(.failure(error))
+//                        }
+//                    }
+//                default:
+//                    let error = NetworkError.serverResponse(response.statusCode)
+//                    completion(.failure(error))
+//                }
+//            } else {
+//                let error = NetworkError.notHTTPResponse
+//                completion(.failure(error))
+//            }
+//        }
+//        // 7
+//        dataTask?.resume()
+//    }
     
     func fetchApod(completion : @escaping (Result<Apod, Error>) -> ()) {
         // 1
@@ -66,42 +126,42 @@ extension NasaDataRepository {
             return
         }
         // 4
-        dataTask = defaultSession.dataTask(with: url) { [weak self] data, response, error in
-
-            guard let strongSelf = self else { return }
-            
-            defer {
-                strongSelf.dataTask = nil
-            }
-
-            // 5
+        dataTask = makeFetchTask(url: url, completion: completion)
+        // 7
+        dataTask?.resume()
+    }
+    
+    func makeFetchTask<T: Decodable>(url: URL, completion : @escaping (Result<T, Error>) -> ()) -> URLSessionTask? {
+        let task = defaultSession.dataTask(with: url) { [weak self] data, response, error in
             if let error = error {
                 completion(.failure(error))
             } else if let response = response as? HTTPURLResponse {
-                switch response.statusCode {
-                case 200:
-                    if let data = data {
-                        do {
-                            let result = try JSONDecoder().decode(Apod.self, from: data)
-                            // 6
-                            DispatchQueue.main.async {
-                                completion(.success(result))
-                            }
-                        } catch (let error) {
-                            completion(.failure(error))
-                        }
-                    }
-                default:
-                    let error = NetworkError.serverResponse(response.statusCode)
-                    completion(.failure(error))
-                }
+                self?.handleResponse(response: response, data: data, completion: completion)
             } else {
                 let error = NetworkError.notHTTPResponse
                 completion(.failure(error))
             }
         }
-        // 7
-        dataTask?.resume()
+        return task
+    }
+    
+    private func handleResponse<T: Decodable>(response: HTTPURLResponse, data: Data?, completion : @escaping (Result<T, Error>) -> ()) {
+        switch response.statusCode {
+        case 200:
+            if let data = data {
+                do {
+                    let result = try JSONDecoder().decode(T.self, from: data)
+                    DispatchQueue.main.async {
+                        completion(.success(result))
+                    }
+                } catch (let error) {
+                    completion(.failure(error))
+                }
+            }
+        default:
+            let error = NetworkError.serverResponse(response.statusCode)
+            completion(.failure(error))
+        }
     }
     
     func fetchEpicImages(completion : @escaping (Result<[EpicImage], Error>) -> ()){
@@ -155,9 +215,4 @@ extension NasaDataRepository {
         epicImagesDataTask?.resume()
     }
     
-}
-
-enum NetworkError : Error {
-    case notHTTPResponse
-    case serverResponse(Int)
 }

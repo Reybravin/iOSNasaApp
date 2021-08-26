@@ -10,6 +10,7 @@
 		F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */; };
 		F62C2AB726D68ED5005EEA92 /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB626D68ED5005EEA92 /* Apod.swift */; };
 		F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB826D69375005EEA92 /* EpicImage.swift */; };
+		F62C2AD726D786E2005EEA92 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AD626D786E2005EEA92 /* NetworkError.swift */; };
 		F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */; };
 		F6FCC7E326AD4F910064E87C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7E226AD4F910064E87C /* Document.swift */; };
 		F6FCC7E626AD4F910064E87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E426AD4F910064E87C /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDataRepository.swift; sourceTree = "<group>"; };
 		F62C2AB626D68ED5005EEA92 /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		F62C2AB826D69375005EEA92 /* EpicImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicImage.swift; sourceTree = "<group>"; };
+		F62C2AD626D786E2005EEA92 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F6FCC7D926AD4F910064E87C /* NasaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6FCC7E226AD4F910064E87C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -107,6 +109,22 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		F62C2ABA26D78467005EEA92 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2AD526D786DB005EEA92 /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		F62C2AD526D786DB005EEA92 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2AD626D786E2005EEA92 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		F6FCC7D026AD4F910064E87C = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 		F6FCC7DB26AD4F910064E87C /* NasaTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				F62C2ABA26D78467005EEA92 /* Infrastructure */,
 				F62C2AB426D68EBF005EEA92 /* Domain */,
 				F6FCC80E26AD4FF10064E87C /* Presentation */,
 				F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */,
@@ -337,6 +356,7 @@
 				F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */,
 				F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */,
 				F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */,
+				F62C2AD726D786E2005EEA92 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

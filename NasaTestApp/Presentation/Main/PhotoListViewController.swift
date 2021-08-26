@@ -82,22 +82,19 @@ class PhotoListViewController: UIViewController {
     private func bind(to viewModel: PhotoListViewModelOutput){
         //
     }
+
+}
+
+
+//MARK: API Requests
+
+extension PhotoListViewController {
     
     private func fetchApod() {
         nasaDataRepository.fetchApod() { [weak self] result in
             switch result {
             case .success(let response):
-                print(response)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func fetchEpicImages() {
-        nasaDataRepository.fetchEpicImages { [weak self] result in
-            switch result {
-            case .success(let response):
+                self?.processApodSuccessResponse(response: response)
                 print(response)
             case .failure(let error):
                 print(error)
@@ -105,6 +102,22 @@ class PhotoListViewController: UIViewController {
         }
     }
 
+    private func processApodSuccessResponse(response: Apod) {}
+    
+    private func fetchEpicImages() {
+        nasaDataRepository.fetchEpicImages { [weak self] result in
+            switch result {
+            case .success(let response):
+                print(response)
+                self?.processEpicImagesSuccessResponse(response: response)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func processEpicImagesSuccessResponse(response: [EpicImage]) {}
+    
 }
 
 
