@@ -7,41 +7,20 @@
 
 import UIKit
 
-struct PhotoItem {
-    let image       : UIImage?
-    let title       : String
-    let subtitle    : String
-}
-
-final class PhotoCellViewModel {
-    
-    let model : PhotoItem
-    
-    init(model: PhotoItem) {
-        self.model = model
-    }
-    
-}
-
-
-protocol PhotoListViewModelInput {
-    func viewDidLoad()
-}
-
-protocol PhotoListViewModelOutput {
-    var cellViewModels : [PhotoCellViewModel] { get }
-}
-
-protocol PhotoListViewModelInterface : PhotoListViewModelInput, PhotoListViewModelOutput {}
-
-final class PhotoListViewModel {
-    
-}
 
 class PhotoListViewController: UIViewController {
     
-    private let nasaDataRepository = NasaDataRepository()
-
+    private var tableHeaderView : PhotoListTableHeaderView!
+    private var viewModel : PhotoListViewModelInterface!
+    private var viewControllersFactory : HomeViewControllersFactory!
+ 
+    static func create(with viewModel: PhotoListViewModelInterface, viewControllersFactory: HomeViewControllersFactory) -> PhotoListViewController {
+        let vc = PhotoListViewController()
+        vc.viewModel = viewModel
+        vc.viewControllersFactory = viewControllersFactory
+        return vc
+    }
+    
     //MARK: UI
     
     private lazy var tableView : UITableView = {
@@ -62,8 +41,13 @@ class PhotoListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchApod()
-        fetchEpicImages()
+        viewModel.viewDidAppear()
+        bind(to: viewModel)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeObservers()
     }
     
     //MARK: UI Setup
@@ -75,49 +59,35 @@ class PhotoListViewController: UIViewController {
     private func addTableView(){
         view.addSubview(tableView)
         tableView.pinToSafeArea(view: view)
+        addTableHeaderView()
+    }
+    
+    private func addTableHeaderView() {
+        let viewBounds = UIScreen.main.bounds
+        let headerView = PhotoListTableHeaderView(frame: CGRect(x: 0, y: 0, width: viewBounds.width, height: viewBounds.height / 4))
+        self.tableHeaderView = headerView
+        tableView.tableHeaderView = headerView
     }
     
     //MARK: Data Binding
     
     private func bind(to viewModel: PhotoListViewModelOutput){
-        //
+        viewModel.headerImageUrl.observe(on: self) { [weak self] url in
+            guard let url = url else { return } 
+            self?.tableHeaderView.setImage(withUrl: url)
+        }
     }
 
+    private func removeObservers() {
+        viewModel.headerImageUrl.remove(observer: self)
+    }
+    
 }
 
 
 //MARK: API Requests
 
 extension PhotoListViewController {
-    
-    private func fetchApod() {
-        nasaDataRepository.fetchApod() { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.processApodSuccessResponse(response: response)
-                print(response)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-
-    private func processApodSuccessResponse(response: Apod) {}
-    
-    private func fetchEpicImages() {
-        nasaDataRepository.fetchEpicImages { [weak self] result in
-            switch result {
-            case .success(let response):
-                print(response)
-                self?.processEpicImagesSuccessResponse(response: response)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    private func processEpicImagesSuccessResponse(response: [EpicImage]) {}
-    
 }
 
 

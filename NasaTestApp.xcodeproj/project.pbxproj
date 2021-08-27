@@ -10,7 +10,32 @@
 		F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */; };
 		F62C2AB726D68ED5005EEA92 /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB626D68ED5005EEA92 /* Apod.swift */; };
 		F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB826D69375005EEA92 /* EpicImage.swift */; };
-		F62C2AD726D786E2005EEA92 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AD626D786E2005EEA92 /* NetworkError.swift */; };
+		F62C2AE726D788CB005EEA92 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADB26D788CB005EEA92 /* ConnectionError.swift */; };
+		F62C2AE826D788CB005EEA92 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADC26D788CB005EEA92 /* DataTransferService.swift */; };
+		F62C2AE926D788CB005EEA92 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADD26D788CB005EEA92 /* NetworkService.swift */; };
+		F62C2AEA26D788CB005EEA92 /* HeaderParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADE26D788CB005EEA92 /* HeaderParameters.swift */; };
+		F62C2AEB26D788CB005EEA92 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADF26D788CB005EEA92 /* Cancellable.swift */; };
+		F62C2AEC26D788CB005EEA92 /* DataTransferError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AE026D788CB005EEA92 /* DataTransferError.swift */; };
+		F62C2AED26D788CB005EEA92 /* StatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AE126D788CB005EEA92 /* StatusCodes.swift */; };
+		F62C2AEE26D788CB005EEA92 /* InvalidCredentialsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AE226D788CB005EEA92 /* InvalidCredentialsResponse.swift */; };
+		F62C2AEF26D788CB005EEA92 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AE326D788CB005EEA92 /* Endpoint.swift */; };
+		F62C2AF026D788CB005EEA92 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AE426D788CB005EEA92 /* NetworkConfig.swift */; };
+		F62C2AF226D78949005EEA92 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AF126D78949005EEA92 /* NetworkError.swift */; };
+		F62C2AF426D7897A005EEA92 /* NetworkErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AF326D7897A005EEA92 /* NetworkErrorLogger.swift */; };
+		F62C2AF726D78C3F005EEA92 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AF626D78C3F005EEA92 /* APIEndpoints.swift */; };
+		F62C2AFA26D7AE81005EEA92 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AF926D7AE81005EEA92 /* RepositoryTask.swift */; };
+		F62C2AFE26D7AF5C005EEA92 /* NasaDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AFD26D7AF5C005EEA92 /* NasaDIContainer.swift */; };
+		F62C2B0026D7B02D005EEA92 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AFF26D7B02D005EEA92 /* PhotoListViewModel.swift */; };
+		F62C2B0226D7B608005EEA92 /* AppMainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B0126D7B608005EEA92 /* AppMainModule.swift */; };
+		F62C2B0426D7B6AE005EEA92 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B0326D7B6AE005EEA92 /* AppDIContainer.swift */; };
+		F62C2B0626D7B702005EEA92 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B0526D7B702005EEA92 /* AppConfiguration.swift */; };
+		F62C2B0D26D7FECA005EEA92 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B0C26D7FECA005EEA92 /* TabBarItem.swift */; };
+		F62C2B1326D800CD005EEA92 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1226D800CD005EEA92 /* HomeDIContainer.swift */; };
+		F62C2B1526D8D4DC005EEA92 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1426D8D4DC005EEA92 /* AppAppearance.swift */; };
+		F62C2B1726D8D65A005EEA92 /* ImageDonwloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1626D8D65A005EEA92 /* ImageDonwloader.swift */; };
+		F62C2B1B26D8D6B6005EEA92 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1A26D8D6B6005EEA92 /* PhotoCellViewModel.swift */; };
+		F62C2B1D26D8D89E005EEA92 /* PhotoListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */; };
+		F62C2B1F26D8D9AF005EEA92 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1E26D8D9AF005EEA92 /* Observable.swift */; };
 		F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */; };
 		F6FCC7E326AD4F910064E87C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7E226AD4F910064E87C /* Document.swift */; };
 		F6FCC7E626AD4F910064E87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E426AD4F910064E87C /* Main.storyboard */; };
@@ -46,7 +71,32 @@
 		F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDataRepository.swift; sourceTree = "<group>"; };
 		F62C2AB626D68ED5005EEA92 /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		F62C2AB826D69375005EEA92 /* EpicImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicImage.swift; sourceTree = "<group>"; };
-		F62C2AD626D786E2005EEA92 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F62C2ADB26D788CB005EEA92 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
+		F62C2ADC26D788CB005EEA92 /* DataTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		F62C2ADD26D788CB005EEA92 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F62C2ADE26D788CB005EEA92 /* HeaderParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderParameters.swift; sourceTree = "<group>"; };
+		F62C2ADF26D788CB005EEA92 /* Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		F62C2AE026D788CB005EEA92 /* DataTransferError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransferError.swift; sourceTree = "<group>"; };
+		F62C2AE126D788CB005EEA92 /* StatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCodes.swift; sourceTree = "<group>"; };
+		F62C2AE226D788CB005EEA92 /* InvalidCredentialsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvalidCredentialsResponse.swift; sourceTree = "<group>"; };
+		F62C2AE326D788CB005EEA92 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		F62C2AE426D788CB005EEA92 /* NetworkConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		F62C2AF126D78949005EEA92 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F62C2AF326D7897A005EEA92 /* NetworkErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorLogger.swift; sourceTree = "<group>"; };
+		F62C2AF626D78C3F005EEA92 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		F62C2AF926D7AE81005EEA92 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		F62C2AFD26D7AF5C005EEA92 /* NasaDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDIContainer.swift; sourceTree = "<group>"; };
+		F62C2AFF26D7B02D005EEA92 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
+		F62C2B0126D7B608005EEA92 /* AppMainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainModule.swift; sourceTree = "<group>"; };
+		F62C2B0326D7B6AE005EEA92 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		F62C2B0526D7B702005EEA92 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		F62C2B0C26D7FECA005EEA92 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		F62C2B1226D800CD005EEA92 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
+		F62C2B1426D8D4DC005EEA92 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		F62C2B1626D8D65A005EEA92 /* ImageDonwloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDonwloader.swift; sourceTree = "<group>"; };
+		F62C2B1A26D8D6B6005EEA92 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
+		F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTableHeaderView.swift; sourceTree = "<group>"; };
+		F62C2B1E26D8D9AF005EEA92 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F6FCC7D926AD4F910064E87C /* NasaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6FCC7E226AD4F910064E87C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -95,6 +145,7 @@
 		F62C2AB426D68EBF005EEA92 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F62C2AF526D78C26005EEA92 /* API */,
 				F62C2AB526D68ECA005EEA92 /* Entities */,
 			);
 			path = Domain;
@@ -112,17 +163,105 @@
 		F62C2ABA26D78467005EEA92 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				F62C2AD526D786DB005EEA92 /* Network */,
+				F62C2AD826D788CB005EEA92 /* Network */,
+				F62C2B1626D8D65A005EEA92 /* ImageDonwloader.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		F62C2AD526D786DB005EEA92 /* Network */ = {
+		F62C2AD826D788CB005EEA92 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F62C2AD626D786E2005EEA92 /* NetworkError.swift */,
+				F62C2ADB26D788CB005EEA92 /* ConnectionError.swift */,
+				F62C2ADC26D788CB005EEA92 /* DataTransferService.swift */,
+				F62C2ADD26D788CB005EEA92 /* NetworkService.swift */,
+				F62C2AF326D7897A005EEA92 /* NetworkErrorLogger.swift */,
+				F62C2AF126D78949005EEA92 /* NetworkError.swift */,
+				F62C2ADE26D788CB005EEA92 /* HeaderParameters.swift */,
+				F62C2ADF26D788CB005EEA92 /* Cancellable.swift */,
+				F62C2AE026D788CB005EEA92 /* DataTransferError.swift */,
+				F62C2AE126D788CB005EEA92 /* StatusCodes.swift */,
+				F62C2AE226D788CB005EEA92 /* InvalidCredentialsResponse.swift */,
+				F62C2AE326D788CB005EEA92 /* Endpoint.swift */,
+				F62C2AE426D788CB005EEA92 /* NetworkConfig.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F62C2AF526D78C26005EEA92 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2AF626D78C3F005EEA92 /* APIEndpoints.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F62C2AF826D7AE75005EEA92 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */,
+				F62C2AF926D7AE81005EEA92 /* RepositoryTask.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F62C2AFB26D7AF26005EEA92 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */,
+				F62C2B0126D7B608005EEA92 /* AppMainModule.swift */,
+				F62C2B1426D8D4DC005EEA92 /* AppAppearance.swift */,
+				F62C2B0526D7B702005EEA92 /* AppConfiguration.swift */,
+				F62C2B0C26D7FECA005EEA92 /* TabBarItem.swift */,
+				F62C2AFC26D7AF2C005EEA92 /* DIContainer */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F62C2AFC26D7AF2C005EEA92 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2B0326D7B6AE005EEA92 /* AppDIContainer.swift */,
+				F62C2B1226D800CD005EEA92 /* HomeDIContainer.swift */,
+				F62C2AFD26D7AF5C005EEA92 /* NasaDIContainer.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		F62C2B1826D8D68B005EEA92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6FCC7E426AD4F910064E87C /* Main.storyboard */,
+				F6FCC81326AD50E00064E87C /* PhotoListViewController.swift */,
+				F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F62C2B1926D8D68E005EEA92 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2AFF26D7B02D005EEA92 /* PhotoListViewModel.swift */,
+				F62C2B1A26D8D6B6005EEA92 /* PhotoCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F62C2B2026D8DB70005EEA92 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				F62C2B1E26D8D9AF005EEA92 /* Observable.swift */,
+			);
+			path = Binding;
+			sourceTree = "<group>";
+		};
+		F62C2B2126D8DB80005EEA92 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F6FCC81A26AD52080064E87C /* Home */,
+				F6FCC81026AD50040064E87C /* DetailView */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		F6FCC7D026AD4F910064E87C = {
@@ -148,10 +287,11 @@
 		F6FCC7DB26AD4F910064E87C /* NasaTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				F62C2AFB26D7AF26005EEA92 /* Application */,
+				F62C2AF826D7AE75005EEA92 /* Data */,
 				F62C2ABA26D78467005EEA92 /* Infrastructure */,
 				F62C2AB426D68EBF005EEA92 /* Domain */,
 				F6FCC80E26AD4FF10064E87C /* Presentation */,
-				F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */,
 				F6FCC7E226AD4F910064E87C /* Document.swift */,
 				F6FCC7E726AD4F940064E87C /* Assets.xcassets */,
 				F6FCC7E926AD4F940064E87C /* LaunchScreen.storyboard */,
@@ -181,10 +321,9 @@
 		F6FCC80E26AD4FF10064E87C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F6FCC81A26AD52080064E87C /* Main */,
-				F6FCC81026AD50040064E87C /* DetailView */,
+				F62C2B2126D8DB80005EEA92 /* Scenes */,
+				F62C2B2026D8DB70005EEA92 /* Binding */,
 				F6FCC81B26AD52850064E87C /* Extensions */,
-				F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -198,13 +337,13 @@
 			path = DetailView;
 			sourceTree = "<group>";
 		};
-		F6FCC81A26AD52080064E87C /* Main */ = {
+		F6FCC81A26AD52080064E87C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F6FCC7E426AD4F910064E87C /* Main.storyboard */,
-				F6FCC81326AD50E00064E87C /* PhotoListViewController.swift */,
+				F62C2B1926D8D68E005EEA92 /* ViewModel */,
+				F62C2B1826D8D68B005EEA92 /* View */,
 			);
-			path = Main;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		F6FCC81B26AD52850064E87C /* Extensions */ = {
@@ -347,16 +486,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F62C2AEA26D788CB005EEA92 /* HeaderParameters.swift in Sources */,
 				F6FCC7E326AD4F910064E87C /* Document.swift in Sources */,
+				F62C2B1726D8D65A005EEA92 /* ImageDonwloader.swift in Sources */,
+				F62C2AED26D788CB005EEA92 /* StatusCodes.swift in Sources */,
+				F62C2AF726D78C3F005EEA92 /* APIEndpoints.swift in Sources */,
+				F62C2B0226D7B608005EEA92 /* AppMainModule.swift in Sources */,
+				F62C2AEB26D788CB005EEA92 /* Cancellable.swift in Sources */,
+				F62C2B1D26D8D89E005EEA92 /* PhotoListTableHeaderView.swift in Sources */,
 				F62C2AB726D68ED5005EEA92 /* Apod.swift in Sources */,
 				F6FCC81626AD50ED0064E87C /* PhotoDetailViewController.swift in Sources */,
+				F62C2B1326D800CD005EEA92 /* HomeDIContainer.swift in Sources */,
+				F62C2B0426D7B6AE005EEA92 /* AppDIContainer.swift in Sources */,
+				F62C2AE826D788CB005EEA92 /* DataTransferService.swift in Sources */,
+				F62C2AE926D788CB005EEA92 /* NetworkService.swift in Sources */,
+				F62C2AEC26D788CB005EEA92 /* DataTransferError.swift in Sources */,
+				F62C2AF226D78949005EEA92 /* NetworkError.swift in Sources */,
 				F6FCC81D26AD52930064E87C /* UIView+Ext.swift in Sources */,
+				F62C2B1526D8D4DC005EEA92 /* AppAppearance.swift in Sources */,
+				F62C2AEE26D788CB005EEA92 /* InvalidCredentialsResponse.swift in Sources */,
+				F62C2B1B26D8D6B6005EEA92 /* PhotoCellViewModel.swift in Sources */,
+				F62C2AE726D788CB005EEA92 /* ConnectionError.swift in Sources */,
+				F62C2AF026D788CB005EEA92 /* NetworkConfig.swift in Sources */,
+				F62C2AEF26D788CB005EEA92 /* Endpoint.swift in Sources */,
 				F6FCC81F26AD53230064E87C /* UITableView+Ext.swift in Sources */,
 				F6FCC81426AD50E00064E87C /* PhotoListViewController.swift in Sources */,
+				F62C2AF426D7897A005EEA92 /* NetworkErrorLogger.swift in Sources */,
+				F62C2AFE26D7AF5C005EEA92 /* NasaDIContainer.swift in Sources */,
 				F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */,
+				F62C2B0D26D7FECA005EEA92 /* TabBarItem.swift in Sources */,
 				F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */,
 				F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */,
-				F62C2AD726D786E2005EEA92 /* NetworkError.swift in Sources */,
+				F62C2B1F26D8D9AF005EEA92 /* Observable.swift in Sources */,
+				F62C2B0026D7B02D005EEA92 /* PhotoListViewModel.swift in Sources */,
+				F62C2B0626D7B702005EEA92 /* AppConfiguration.swift in Sources */,
+				F62C2AFA26D7AE81005EEA92 /* RepositoryTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
