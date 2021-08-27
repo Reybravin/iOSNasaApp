@@ -36,6 +36,8 @@
 		F62C2B1B26D8D6B6005EEA92 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1A26D8D6B6005EEA92 /* PhotoCellViewModel.swift */; };
 		F62C2B1D26D8D89E005EEA92 /* PhotoListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */; };
 		F62C2B1F26D8D9AF005EEA92 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1E26D8D9AF005EEA92 /* Observable.swift */; };
+		F62C2B2426D925DF005EEA92 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B2226D925DE005EEA92 /* PhotoCell.swift */; };
+		F62C2B2526D925DF005EEA92 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62C2B2326D925DF005EEA92 /* PhotoCell.xib */; };
 		F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */; };
 		F6FCC7E326AD4F910064E87C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7E226AD4F910064E87C /* Document.swift */; };
 		F6FCC7E626AD4F910064E87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E426AD4F910064E87C /* Main.storyboard */; };
@@ -97,6 +99,8 @@
 		F62C2B1A26D8D6B6005EEA92 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
 		F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTableHeaderView.swift; sourceTree = "<group>"; };
 		F62C2B1E26D8D9AF005EEA92 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F62C2B2226D925DE005EEA92 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		F62C2B2326D925DF005EEA92 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		F6FCC7D926AD4F910064E87C /* NasaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6FCC7E226AD4F910064E87C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 			children = (
 				F6FCC7E426AD4F910064E87C /* Main.storyboard */,
 				F6FCC81326AD50E00064E87C /* PhotoListViewController.swift */,
+				F62C2B2226D925DE005EEA92 /* PhotoCell.swift */,
+				F62C2B2326D925DF005EEA92 /* PhotoCell.xib */,
 				F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */,
 			);
 			path = View;
@@ -462,6 +468,7 @@
 				F6FCC7EB26AD4F940064E87C /* LaunchScreen.storyboard in Resources */,
 				F6FCC7E826AD4F940064E87C /* Assets.xcassets in Resources */,
 				F6FCC7E626AD4F910064E87C /* Main.storyboard in Resources */,
+				F62C2B2526D925DF005EEA92 /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +521,7 @@
 				F62C2AF426D7897A005EEA92 /* NetworkErrorLogger.swift in Sources */,
 				F62C2AFE26D7AF5C005EEA92 /* NasaDIContainer.swift in Sources */,
 				F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */,
+				F62C2B2426D925DF005EEA92 /* PhotoCell.swift in Sources */,
 				F62C2B0D26D7FECA005EEA92 /* TabBarItem.swift in Sources */,
 				F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */,
 				F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */,

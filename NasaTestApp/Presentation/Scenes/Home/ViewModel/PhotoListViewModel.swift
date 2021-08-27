@@ -14,6 +14,7 @@ protocol PhotoListViewModelInput {
 
 protocol PhotoListViewModelOutput {
     var headerImageUrl : Observable<URL?> { get }
+    var cellViewModels : Observable<[PhotoCellViewModel]> { get }
 }
 
 protocol PhotoListViewModelInterface : PhotoListViewModelInput, PhotoListViewModelOutput {}
@@ -24,7 +25,8 @@ final class PhotoListViewModel : PhotoListViewModelInterface {
     
     private var apodDataTask : Cancellable?
     private var epicImagesDataTask : Cancellable?
-    
+    private var epicImages : [EpicImage] = []
+
     init(nasaDataRepository: NasaDataRepositoryInterface){
         self.nasaDataRepository = nasaDataRepository
     }
@@ -40,6 +42,8 @@ final class PhotoListViewModel : PhotoListViewModelInterface {
     
     //MARK: Output
     let headerImageUrl : Observable<URL?> = Observable(nil)
+    let cellViewModels : Observable<[PhotoCellViewModel]> = Observable([])
+
 
 }
 
@@ -94,7 +98,10 @@ extension PhotoListViewModel {
         }
     }
     
-    private func processEpicImagesSuccessResponse(response: [EpicImage]) {}
+    private func processEpicImagesSuccessResponse(response: [EpicImage]) {
+        self.epicImages = response
+        self.cellViewModels.value = response.map({ PhotoCellViewModel(model: $0) })
+    }
     
     
 }

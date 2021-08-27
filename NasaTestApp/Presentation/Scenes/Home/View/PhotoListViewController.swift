@@ -26,6 +26,8 @@ class PhotoListViewController: UIViewController {
     private lazy var tableView : UITableView = {
         let view = UITableView()
         view.register(cellClass: UITableViewCell.self)
+        view.registerNib(cellClass: PhotoCell.self)
+        view.rowHeight = 100
         view.dataSource = self
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +55,7 @@ class PhotoListViewController: UIViewController {
     //MARK: UI Setup
     
     private func setupView(){
+        title = "NASA Photos"
         addTableView()
     }
     
@@ -75,6 +78,10 @@ class PhotoListViewController: UIViewController {
         viewModel.headerImageUrl.observe(on: self) { [weak self] url in
             guard let url = url else { return } 
             self?.tableHeaderView.setImage(withUrl: url)
+        }
+        
+        viewModel.cellViewModels.observe(on: self) { [weak self] epicImages in
+            self?.tableView.reloadData()
         }
     }
 
@@ -105,12 +112,16 @@ extension PhotoListViewController : UITableViewDelegate {
 extension PhotoListViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.cellViewModels.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : UITableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        cell.backgroundColor = .yellow
+        let cell : PhotoCell = tableView.dequeueReusableCell(indexPath: indexPath)
+        let cellViewModels = viewModel.cellViewModels.value
+        if cellViewModels.indices.contains(indexPath.row) {
+            let cellViewModel = cellViewModels[indexPath.row]
+            cell.configureView(with: cellViewModel)
+        }
         return cell
     }
 }
