@@ -96,6 +96,8 @@ extension AppMainModule {
         homeVC.tabBarItem = makeBarButtonItem(type: .home)
         
         let secondVC = UIViewController()
+        secondVC.view.backgroundColor = .white
+        secondVC.title = "Favorites"
         secondVC.tabBarItem = makeBarButtonItem(type: .second)
         
         let controllers = [homeVC, secondVC]

@@ -13,6 +13,8 @@ protocol PhotoListViewModelInput {
 }
 
 protocol PhotoListViewModelOutput {
+    var isLoading : Observable<Bool> { get }
+    var errorText : Observable<String> { get }
     var headerImageUrl : Observable<URL?> { get }
     var cellViewModels : Observable<[PhotoCellViewModel]> { get }
 }
@@ -41,9 +43,11 @@ final class PhotoListViewModel : PhotoListViewModelInterface {
     }
     
     //MARK: Output
+    
     let headerImageUrl : Observable<URL?> = Observable(nil)
     let cellViewModels : Observable<[PhotoCellViewModel]> = Observable([])
-
+    let isLoading : Observable<Bool> = Observable(false)
+    let errorText : Observable<String> = Observable("")
 
 }
 
@@ -54,20 +58,22 @@ extension PhotoListViewModel {
     
     private func fetchApod() {
         
+        isLoading.value = true
+        
         apodDataTask?.cancel()
         
         apodDataTask = nasaDataRepository.fetchApod() { [weak self] result in
             
             defer {
+                self?.isLoading.value = false
                 self?.apodDataTask = nil
             }
             
             switch result {
             case .success(let response):
                 self?.processApodSuccessResponse(response: response)
-                print(response)
             case .failure(let error):
-                print(error)
+                self?.errorText.value = error.localizedDescription
             }
         }
     }
@@ -80,20 +86,22 @@ extension PhotoListViewModel {
     
     private func fetchEpicImages() {
         
+        isLoading.value = true
+        
         epicImagesDataTask?.cancel()
 
         epicImagesDataTask = nasaDataRepository.fetchEpicImages() { [weak self] result in
             
             defer {
                 self?.epicImagesDataTask = nil
+                self?.isLoading.value = false
             }
             
             switch result {
             case .success(let response):
-                print(response)
                 self?.processEpicImagesSuccessResponse(response: response)
             case .failure(let error):
-                print(error)
+                self?.errorText.value = error.localizedDescription
             }
         }
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 
-class PhotoListViewController: UIViewController {
+class PhotoListViewController: UIViewController, Alertable, Asyncable {
     
     private var tableHeaderView : PhotoListTableHeaderView!
     private var viewModel : PhotoListViewModelInterface!
@@ -22,6 +22,8 @@ class PhotoListViewController: UIViewController {
     }
     
     //MARK: UI
+    
+    private var activityIndicator : UIActivityIndicatorView?
     
     private lazy var tableView : UITableView = {
         let view = UITableView()
@@ -72,29 +74,44 @@ class PhotoListViewController: UIViewController {
         tableView.tableHeaderView = headerView
     }
     
+    
     //MARK: Data Binding
     
     private func bind(to viewModel: PhotoListViewModelOutput){
-        viewModel.headerImageUrl.observe(on: self) { [weak self] url in
-            guard let url = url else { return } 
-            self?.tableHeaderView.setImage(withUrl: url)
-        }
         
-        viewModel.cellViewModels.observe(on: self) { [weak self] epicImages in
-            self?.tableView.reloadData()
-        }
+        viewModel.isLoading.observe(on: self) { [weak self] in self?.handleIsLoading($0) }
+        viewModel.errorText.observe(on: self) { [weak self] in self?.showError($0) }
+        viewModel.headerImageUrl.observe(on: self) { [weak self] in self?.handleHeaderImageUrlUpdated($0) }
+        viewModel.cellViewModels.observe(on: self) { [weak self] _ in self?.tableView.reloadData() }
+        
     }
 
     private func removeObservers() {
         viewModel.headerImageUrl.remove(observer: self)
+        viewModel.errorText.remove(observer: self)
+        viewModel.isLoading.remove(observer: self)
+        viewModel.cellViewModels.remove(observer: self)
     }
     
-}
-
-
-//MARK: API Requests
-
-extension PhotoListViewController {
+    private func handleHeaderImageUrlUpdated(_ url : URL?) {
+        guard let url = url else { return }
+        tableHeaderView.setImage(withUrl: url)
+    }
+    
+    private func showError(_ error: String) {
+        guard !error.isEmpty else { return }
+        showAlert(title: "Error", message: error)
+    }
+    
+    private func handleIsLoading(_ isLoading: Bool) {
+        if isLoading {
+            guard activityIndicator == nil else { return }
+            activityIndicator = showActivityIndicator(onView: self.view)
+        } else {
+            hideActivityIndicator(&activityIndicator)
+        }
+    }
+    
 }
 
 
@@ -102,7 +119,7 @@ extension PhotoListViewController {
 
 extension PhotoListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
