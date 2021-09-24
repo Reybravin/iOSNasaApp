@@ -7,15 +7,13 @@
 
 import UIKit
 
-fileprivate let apiKey : String = "KK2KcxX66KsS1jjiVH7gQDdJWcBHSxyE1S93QMOL"
 
-fileprivate var baseURL : String {
-    return "https://api.nasa.gov"
-}
-
-fileprivate let scheme = "https"
-fileprivate let host = "api.nasa.gov"
-fileprivate let epic = "/EPIC/api/natural/images"
+fileprivate let API_KEY : String = "KK2KcxX66KsS1jjiVH7gQDdJWcBHSxyE1S93QMOL"
+//fileprivate let SCHEME = "https"
+//fileprivate let HOST = "api.nasa.gov"
+fileprivate let APOD_PATH = "planetary/apod"
+fileprivate let EPIC_PATH = "EPIC/api/natural/images"
+fileprivate let EPIC_IMAGE_PATH = "EPIC/archive/natural/"
 
 
 struct APIEndpoints {
@@ -24,20 +22,31 @@ struct APIEndpoints {
         
         case apod
         case epicImages
+        case epicImageUrl(EpicImage)
         
         var path : String {
             switch self {
-            case .apod: return "planetary/apod"
-            case .epicImages : return "EPIC/api/natural/images"
+            case .apod: return APOD_PATH
+            case .epicImages : return EPIC_PATH
+            case .epicImageUrl(let model):
+                guard let datePath = (model.date.split(separator: " ").first)?.replacingOccurrences(of: "-", with: "/") else {
+                    return ""
+                }
+                
+                let basePath = EPIC_IMAGE_PATH
+                let fileExtPath = "/png/"
+                let fileName = model.image + ".png"
+                let path = basePath + datePath + fileExtPath + fileName
+                return path
             }
         }
         
         var queryParameters : [String: Any] {
             switch self {
-            case .apod : return ["api_key" : apiKey,
+            case .apod : return ["api_key" : API_KEY,
                                  "thumbs" : "\(true)"]
-            case .epicImages : return ["api_key" : apiKey]
-            default: return ["" : ""]
+            case .epicImages :  return ["api_key" : API_KEY]
+            case .epicImageUrl(_) : return ["api_key" : API_KEY]
             }
         }
         
@@ -72,4 +81,34 @@ struct APIEndpoints {
                         queryParameters: urlEndpoint.queryParameters,
                         responseDecoder: JSONResponseDecoder())
     }
+    
+    //MARK: Images Downloading URL
+    
+//    static func epicImageUrl(image: EpicImage) -> URL? {
+//
+//        guard let datePath = (image.date.split(separator: " ").first)?.replacingOccurrences(of: "-", with: "/") else {
+//            return nil
+//        }
+//
+//        let basePath = "/" + EPIC_IMAGE_PATH
+//        let fileExtPath = "/png/"
+//        let fileName = image.image + ".png"
+//        let path = basePath + datePath + fileExtPath + fileName
+//
+//        var urlComponents = URLComponents()
+//        urlComponents.scheme = SCHEME
+//        urlComponents.host = HOST
+//        urlComponents.path = path
+//        urlComponents.queryItems = [URLQueryItem(name: "api_key", value: API_KEY)]
+//
+//        return urlComponents.url
+//
+//    }
+    
+    static func epicImageUrl(image: EpicImage) -> Endpoint<Void> {
+        let urlEndpoint = urlEndpoint.epicImageUrl(image)
+        return Endpoint(path: urlEndpoint.path,
+                        queryParameters: urlEndpoint.queryParameters)
+    }
+    
 }

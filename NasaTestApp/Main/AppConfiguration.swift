@@ -9,5 +9,5 @@
 import Foundation
 
 final class AppConfiguration {
-    let apiBaseURL: String = "https://api.nasa.gov"
+    let nasaApiBaseURL: String = "https://api.nasa.gov"
 }

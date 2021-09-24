@@ -14,7 +14,7 @@ class DataTransferServiceTests: XCTestCase {
     
     override func setUpWithError() throws {
         super.setUp()
-        sut = AppDIContainer().apiDataTransferService
+        sut = AppDIContainer().nasaApiDataTransferService
     }
 
     override func tearDownWithError() throws {

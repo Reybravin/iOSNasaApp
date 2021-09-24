@@ -18,6 +18,7 @@ public protocol NetworkService {
     
     func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable?
     func urlString(endPoint: Requestable) -> String
+    func url(endPoint: Requestable) -> URL
 }
 
 public protocol NetworkSessionManager {
@@ -110,6 +111,16 @@ extension DefaultNetworkService: NetworkService {
         do {
             let url = try endPoint.url(with: config)
             return url.absoluteString
+        } catch {
+            print(error)
+            fatalError("There has to be the url for this endpoint")
+        }
+    }
+    
+    public func url(endPoint: Requestable) -> URL {
+        do {
+            let url = try endPoint.url(with: config)
+            return url
         } catch {
             print(error)
             fatalError("There has to be the url for this endpoint")

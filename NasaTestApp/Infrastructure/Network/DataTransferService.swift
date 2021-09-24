@@ -18,6 +18,8 @@ public protocol DataTransferService {
     func request<Void, E: ResponseRequestable>(with endpoint: E,
                                                completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where E.Response == Void
     func urlString(endPoint: Requestable) -> String
+    func url(endPoint: Requestable) -> URL
+    
 }
 
 public protocol DataTransferErrorResolver {
@@ -52,6 +54,10 @@ extension DefaultDataTransferService: DataTransferService {
     
     public func urlString(endPoint: Requestable) -> String {
         return networkService.urlString(endPoint: endPoint)
+    }
+   
+    public func url(endPoint endPoint: Requestable) -> URL {
+        return networkService.url(endPoint: endPoint)
     }
     
     public func request<Void, E>(with endpoint: E, completion: @escaping CompletionHandler<Void>) -> NetworkCancellable? where Void == E.Response, E : ResponseRequestable {

@@ -77,7 +77,7 @@ enum RequestGenerationError: Error {
 }
 
 extension Requestable {
-    
+     
     func url(with config: NetworkConfigurable) throws -> URL {
 
         let baseURL = config.baseURL.absoluteString.last != "/" ? config.baseURL.absoluteString + "/" : config.baseURL.absoluteString

@@ -8,7 +8,6 @@
 import UIKit
 
 protocol PhotoListViewModelInput {
-    func viewDidLoad()
     func viewDidAppear()
 }
 
@@ -34,9 +33,7 @@ final class PhotoListViewModel : PhotoListViewModelInterface {
     }
     
     //MARK: Input
-    
-    func viewDidLoad() {}
-    
+        
     func viewDidAppear() {
         fetchApod()
         fetchEpicImages()
@@ -108,7 +105,7 @@ extension PhotoListViewModel {
     
     private func processEpicImagesSuccessResponse(response: [EpicImage]) {
         self.epicImages = response
-        self.cellViewModels.value = response.map({ PhotoCellViewModel(model: $0) })
+        self.cellViewModels.value = response.map({ PhotoCellViewModel(model: $0, nasaDataRepository: nasaDataRepository) })
     }
     
     

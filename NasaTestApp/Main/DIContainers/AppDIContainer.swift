@@ -14,14 +14,14 @@ final class AppDIContainer {
     
     // MARK: - Network
     
-    lazy var apiDataTransferService: DataTransferService = {
-        let config = ApiDataNetworkConfig(baseURL: URL(string: appConfigurations.apiBaseURL)!)
+    lazy var nasaApiDataTransferService: DataTransferService = {
+        let config = ApiDataNetworkConfig(baseURL: URL(string: appConfigurations.nasaApiBaseURL)!)
         let apiDataNetwork = DefaultNetworkService(config: config)
         return DefaultDataTransferService(with: apiDataNetwork)
     }()
     
     lazy var nasaDataRepository : NasaDataRepositoryInterface = {
-        return NasaDataRepository(dataTransferService: apiDataTransferService)
+        return NasaDataRepository(dataTransferService: nasaApiDataTransferService)
     }()
     
 
@@ -29,7 +29,7 @@ final class AppDIContainer {
     
     func makeHomeDIContainer() -> HomeDIContainer {
         let dependencies = HomeDIContainer.Dependencies(
-            apiDataTransferService: apiDataTransferService,
+            apiDataTransferService: nasaApiDataTransferService,
             nasaDataRepository: nasaDataRepository)
         return HomeDIContainer(dependencies: dependencies)
     }
