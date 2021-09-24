@@ -10,7 +10,6 @@
 		F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */; };
 		F62C2AB726D68ED5005EEA92 /* Apod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB626D68ED5005EEA92 /* Apod.swift */; };
 		F62C2AB926D69375005EEA92 /* EpicImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AB826D69375005EEA92 /* EpicImage.swift */; };
-		F62C2AE726D788CB005EEA92 /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADB26D788CB005EEA92 /* ConnectionError.swift */; };
 		F62C2AE826D788CB005EEA92 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADC26D788CB005EEA92 /* DataTransferService.swift */; };
 		F62C2AE926D788CB005EEA92 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADD26D788CB005EEA92 /* NetworkService.swift */; };
 		F62C2AEA26D788CB005EEA92 /* HeaderParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2ADE26D788CB005EEA92 /* HeaderParameters.swift */; };
@@ -24,7 +23,6 @@
 		F62C2AF426D7897A005EEA92 /* NetworkErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AF326D7897A005EEA92 /* NetworkErrorLogger.swift */; };
 		F62C2AF726D78C3F005EEA92 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AF626D78C3F005EEA92 /* APIEndpoints.swift */; };
 		F62C2AFA26D7AE81005EEA92 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AF926D7AE81005EEA92 /* RepositoryTask.swift */; };
-		F62C2AFE26D7AF5C005EEA92 /* NasaDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AFD26D7AF5C005EEA92 /* NasaDIContainer.swift */; };
 		F62C2B0026D7B02D005EEA92 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2AFF26D7B02D005EEA92 /* PhotoListViewModel.swift */; };
 		F62C2B0226D7B608005EEA92 /* AppMainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B0126D7B608005EEA92 /* AppMainModule.swift */; };
 		F62C2B0426D7B6AE005EEA92 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B0326D7B6AE005EEA92 /* AppDIContainer.swift */; };
@@ -32,15 +30,25 @@
 		F62C2B0D26D7FECA005EEA92 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B0C26D7FECA005EEA92 /* TabBarItem.swift */; };
 		F62C2B1326D800CD005EEA92 /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1226D800CD005EEA92 /* HomeDIContainer.swift */; };
 		F62C2B1526D8D4DC005EEA92 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1426D8D4DC005EEA92 /* AppAppearance.swift */; };
-		F62C2B1726D8D65A005EEA92 /* ImageDonwloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1626D8D65A005EEA92 /* ImageDonwloader.swift */; };
+		F62C2B1726D8D65A005EEA92 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1626D8D65A005EEA92 /* ImageDownloader.swift */; };
 		F62C2B1B26D8D6B6005EEA92 /* PhotoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1A26D8D6B6005EEA92 /* PhotoCellViewModel.swift */; };
 		F62C2B1D26D8D89E005EEA92 /* PhotoListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */; };
 		F62C2B1F26D8D9AF005EEA92 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B1E26D8D9AF005EEA92 /* Observable.swift */; };
 		F62C2B2426D925DF005EEA92 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62C2B2226D925DE005EEA92 /* PhotoCell.swift */; };
 		F62C2B2526D925DF005EEA92 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62C2B2326D925DF005EEA92 /* PhotoCell.xib */; };
+		F62DAF0C26FB43B00078AA5C /* PhotoListTableHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62DAF0B26FB43B00078AA5C /* PhotoListTableHeaderViewTests.swift */; };
+		F632783726F8A64800AC733A /* PhotoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632783626F8A64800AC733A /* PhotoListViewModelTests.swift */; };
+		F632783A26F8AC4800AC733A /* MockNasaDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632783926F8AC4800AC733A /* MockNasaDataRepository.swift */; };
+		F6A88DD226F9CEA1003145A0 /* PhotoCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DD126F9CEA1003145A0 /* PhotoCellViewModelTests.swift */; };
+		F6A88DD426F9D1EF003145A0 /* PhotoCellViewModelFailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DD326F9D1EF003145A0 /* PhotoCellViewModelFailTests.swift */; };
+		F6A88DD826F9DD93003145A0 /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DD726F9DD93003145A0 /* NetworkErrorTests.swift */; };
+		F6A88DDA26F9E05F003145A0 /* PhotoDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DD926F9E05F003145A0 /* PhotoDetailViewControllerTests.swift */; };
+		F6A88DDE26F9E3BB003145A0 /* PhotoCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DDD26F9E3BB003145A0 /* PhotoCellTests.swift */; };
+		F6A88DE026F9E678003145A0 /* HeaderParametersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DDF26F9E678003145A0 /* HeaderParametersTests.swift */; };
+		F6A88DE226F9EB52003145A0 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DE126F9EB52003145A0 /* DataTransferServiceTests.swift */; };
+		F6A88DE426FA12AF003145A0 /* PhotoListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A88DE326FA12AF003145A0 /* PhotoListViewControllerTests.swift */; };
 		F6BBA57526E0FB4500BF9638 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6BBA57426E0FB4500BF9638 /* Alertable.swift */; };
 		F6FCC7DD26AD4F910064E87C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */; };
-		F6FCC7E326AD4F910064E87C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FCC7E226AD4F910064E87C /* Document.swift */; };
 		F6FCC7E626AD4F910064E87C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E426AD4F910064E87C /* Main.storyboard */; };
 		F6FCC7E826AD4F940064E87C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E726AD4F940064E87C /* Assets.xcassets */; };
 		F6FCC7EB26AD4F940064E87C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FCC7E926AD4F940064E87C /* LaunchScreen.storyboard */; };
@@ -74,7 +82,6 @@
 		F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDataRepository.swift; sourceTree = "<group>"; };
 		F62C2AB626D68ED5005EEA92 /* Apod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apod.swift; sourceTree = "<group>"; };
 		F62C2AB826D69375005EEA92 /* EpicImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicImage.swift; sourceTree = "<group>"; };
-		F62C2ADB26D788CB005EEA92 /* ConnectionError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
 		F62C2ADC26D788CB005EEA92 /* DataTransferService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 		F62C2ADD26D788CB005EEA92 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F62C2ADE26D788CB005EEA92 /* HeaderParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderParameters.swift; sourceTree = "<group>"; };
@@ -88,7 +95,6 @@
 		F62C2AF326D7897A005EEA92 /* NetworkErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorLogger.swift; sourceTree = "<group>"; };
 		F62C2AF626D78C3F005EEA92 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		F62C2AF926D7AE81005EEA92 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
-		F62C2AFD26D7AF5C005EEA92 /* NasaDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaDIContainer.swift; sourceTree = "<group>"; };
 		F62C2AFF26D7B02D005EEA92 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		F62C2B0126D7B608005EEA92 /* AppMainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainModule.swift; sourceTree = "<group>"; };
 		F62C2B0326D7B6AE005EEA92 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
@@ -96,16 +102,26 @@
 		F62C2B0C26D7FECA005EEA92 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		F62C2B1226D800CD005EEA92 /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
 		F62C2B1426D8D4DC005EEA92 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
-		F62C2B1626D8D65A005EEA92 /* ImageDonwloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDonwloader.swift; sourceTree = "<group>"; };
+		F62C2B1626D8D65A005EEA92 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		F62C2B1A26D8D6B6005EEA92 /* PhotoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModel.swift; sourceTree = "<group>"; };
 		F62C2B1C26D8D89E005EEA92 /* PhotoListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTableHeaderView.swift; sourceTree = "<group>"; };
 		F62C2B1E26D8D9AF005EEA92 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F62C2B2226D925DE005EEA92 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F62C2B2326D925DF005EEA92 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		F62DAF0B26FB43B00078AA5C /* PhotoListTableHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTableHeaderViewTests.swift; sourceTree = "<group>"; };
+		F632783626F8A64800AC733A /* PhotoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModelTests.swift; sourceTree = "<group>"; };
+		F632783926F8AC4800AC733A /* MockNasaDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNasaDataRepository.swift; sourceTree = "<group>"; };
+		F6A88DD126F9CEA1003145A0 /* PhotoCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModelTests.swift; sourceTree = "<group>"; };
+		F6A88DD326F9D1EF003145A0 /* PhotoCellViewModelFailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellViewModelFailTests.swift; sourceTree = "<group>"; };
+		F6A88DD726F9DD93003145A0 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		F6A88DD926F9E05F003145A0 /* PhotoDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		F6A88DDD26F9E3BB003145A0 /* PhotoCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCellTests.swift; sourceTree = "<group>"; };
+		F6A88DDF26F9E678003145A0 /* HeaderParametersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderParametersTests.swift; sourceTree = "<group>"; };
+		F6A88DE126F9EB52003145A0 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
+		F6A88DE326FA12AF003145A0 /* PhotoListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewControllerTests.swift; sourceTree = "<group>"; };
 		F6BBA57426E0FB4500BF9638 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		F6FCC7D926AD4F910064E87C /* NasaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NasaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F6FCC7E226AD4F910064E87C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		F6FCC7E526AD4F910064E87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6FCC7E726AD4F940064E87C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6FCC7EA26AD4F940064E87C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -170,7 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				F62C2AD826D788CB005EEA92 /* Network */,
-				F62C2B1626D8D65A005EEA92 /* ImageDonwloader.swift */,
+				F62C2B1626D8D65A005EEA92 /* ImageDownloader.swift */,
+				F62C2AF926D7AE81005EEA92 /* RepositoryTask.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -178,7 +195,6 @@
 		F62C2AD826D788CB005EEA92 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F62C2ADB26D788CB005EEA92 /* ConnectionError.swift */,
 				F62C2ADC26D788CB005EEA92 /* DataTransferService.swift */,
 				F62C2ADD26D788CB005EEA92 /* NetworkService.swift */,
 				F62C2AF326D7897A005EEA92 /* NetworkErrorLogger.swift */,
@@ -206,12 +222,11 @@
 			isa = PBXGroup;
 			children = (
 				F62C2AB226D681A0005EEA92 /* NasaDataRepository.swift */,
-				F62C2AF926D7AE81005EEA92 /* RepositoryTask.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		F62C2AFB26D7AF26005EEA92 /* Application */ = {
+		F62C2AFB26D7AF26005EEA92 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				F6FCC7DC26AD4F910064E87C /* AppDelegate.swift */,
@@ -219,19 +234,18 @@
 				F62C2B1426D8D4DC005EEA92 /* AppAppearance.swift */,
 				F62C2B0526D7B702005EEA92 /* AppConfiguration.swift */,
 				F62C2B0C26D7FECA005EEA92 /* TabBarItem.swift */,
-				F62C2AFC26D7AF2C005EEA92 /* DIContainer */,
+				F62C2AFC26D7AF2C005EEA92 /* DIContainers */,
 			);
-			path = Application;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		F62C2AFC26D7AF2C005EEA92 /* DIContainer */ = {
+		F62C2AFC26D7AF2C005EEA92 /* DIContainers */ = {
 			isa = PBXGroup;
 			children = (
 				F62C2B0326D7B6AE005EEA92 /* AppDIContainer.swift */,
 				F62C2B1226D800CD005EEA92 /* HomeDIContainer.swift */,
-				F62C2AFD26D7AF5C005EEA92 /* NasaDIContainer.swift */,
 			);
-			path = DIContainer;
+			path = DIContainers;
 			sourceTree = "<group>";
 		};
 		F62C2B1826D8D68B005EEA92 /* View */ = {
@@ -272,6 +286,24 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		F632783826F8AC1F00AC733A /* MockRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				F632783926F8AC4800AC733A /* MockNasaDataRepository.swift */,
+			);
+			path = MockRepositories;
+			sourceTree = "<group>";
+		};
+		F6A88DD626F9DD7B003145A0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F6A88DD726F9DD93003145A0 /* NetworkErrorTests.swift */,
+				F6A88DDF26F9E678003145A0 /* HeaderParametersTests.swift */,
+				F6A88DE126F9EB52003145A0 /* DataTransferServiceTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		F6FCC7D026AD4F910064E87C = {
 			isa = PBXGroup;
 			children = (
@@ -295,12 +327,11 @@
 		F6FCC7DB26AD4F910064E87C /* NasaTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				F62C2AFB26D7AF26005EEA92 /* Application */,
+				F62C2AFB26D7AF26005EEA92 /* Main */,
 				F62C2AF826D7AE75005EEA92 /* Data */,
 				F62C2ABA26D78467005EEA92 /* Infrastructure */,
 				F62C2AB426D68EBF005EEA92 /* Domain */,
 				F6FCC80E26AD4FF10064E87C /* Presentation */,
-				F6FCC7E226AD4F910064E87C /* Document.swift */,
 				F6FCC7E726AD4F940064E87C /* Assets.xcassets */,
 				F6FCC7E926AD4F940064E87C /* LaunchScreen.storyboard */,
 				F6FCC7EC26AD4F940064E87C /* Info.plist */,
@@ -311,7 +342,16 @@
 		F6FCC7F426AD4F940064E87C /* NasaTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				F6A88DD626F9DD7B003145A0 /* Networking */,
+				F632783826F8AC1F00AC733A /* MockRepositories */,
 				F6FCC7F526AD4F940064E87C /* NasaTestAppTests.swift */,
+				F6A88DDD26F9E3BB003145A0 /* PhotoCellTests.swift */,
+				F62DAF0B26FB43B00078AA5C /* PhotoListTableHeaderViewTests.swift */,
+				F632783626F8A64800AC733A /* PhotoListViewModelTests.swift */,
+				F6A88DE326FA12AF003145A0 /* PhotoListViewControllerTests.swift */,
+				F6A88DD126F9CEA1003145A0 /* PhotoCellViewModelTests.swift */,
+				F6A88DD926F9E05F003145A0 /* PhotoDetailViewControllerTests.swift */,
+				F6A88DD326F9D1EF003145A0 /* PhotoCellViewModelFailTests.swift */,
 				F6FCC7F726AD4F940064E87C /* Info.plist */,
 			);
 			path = NasaTestAppTests;
@@ -497,8 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F62C2AEA26D788CB005EEA92 /* HeaderParameters.swift in Sources */,
-				F6FCC7E326AD4F910064E87C /* Document.swift in Sources */,
-				F62C2B1726D8D65A005EEA92 /* ImageDonwloader.swift in Sources */,
+				F62C2B1726D8D65A005EEA92 /* ImageDownloader.swift in Sources */,
 				F62C2AED26D788CB005EEA92 /* StatusCodes.swift in Sources */,
 				F62C2AF726D78C3F005EEA92 /* APIEndpoints.swift in Sources */,
 				F62C2B0226D7B608005EEA92 /* AppMainModule.swift in Sources */,
@@ -516,13 +555,11 @@
 				F62C2B1526D8D4DC005EEA92 /* AppAppearance.swift in Sources */,
 				F62C2AEE26D788CB005EEA92 /* InvalidCredentialsResponse.swift in Sources */,
 				F62C2B1B26D8D6B6005EEA92 /* PhotoCellViewModel.swift in Sources */,
-				F62C2AE726D788CB005EEA92 /* ConnectionError.swift in Sources */,
 				F62C2AF026D788CB005EEA92 /* NetworkConfig.swift in Sources */,
 				F62C2AEF26D788CB005EEA92 /* Endpoint.swift in Sources */,
 				F6FCC81F26AD53230064E87C /* UITableView+Ext.swift in Sources */,
 				F6FCC81426AD50E00064E87C /* PhotoListViewController.swift in Sources */,
 				F62C2AF426D7897A005EEA92 /* NetworkErrorLogger.swift in Sources */,
-				F62C2AFE26D7AF5C005EEA92 /* NasaDIContainer.swift in Sources */,
 				F62C2AB326D681A0005EEA92 /* NasaDataRepository.swift in Sources */,
 				F62C2B2426D925DF005EEA92 /* PhotoCell.swift in Sources */,
 				F62C2B0D26D7FECA005EEA92 /* TabBarItem.swift in Sources */,
@@ -541,6 +578,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6FCC7F626AD4F940064E87C /* NasaTestAppTests.swift in Sources */,
+				F6A88DD226F9CEA1003145A0 /* PhotoCellViewModelTests.swift in Sources */,
+				F632783A26F8AC4800AC733A /* MockNasaDataRepository.swift in Sources */,
+				F62DAF0C26FB43B00078AA5C /* PhotoListTableHeaderViewTests.swift in Sources */,
+				F632783726F8A64800AC733A /* PhotoListViewModelTests.swift in Sources */,
+				F6A88DE026F9E678003145A0 /* HeaderParametersTests.swift in Sources */,
+				F6A88DDE26F9E3BB003145A0 /* PhotoCellTests.swift in Sources */,
+				F6A88DD426F9D1EF003145A0 /* PhotoCellViewModelFailTests.swift in Sources */,
+				F6A88DE426FA12AF003145A0 /* PhotoListViewControllerTests.swift in Sources */,
+				F6A88DD826F9DD93003145A0 /* NetworkErrorTests.swift in Sources */,
+				F6A88DE226F9EB52003145A0 /* DataTransferServiceTests.swift in Sources */,
+				F6A88DDA26F9E05F003145A0 /* PhotoDetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,12 +7,12 @@
 
 struct Apod : Decodable {
     
-    let copyright : String
+    let copyright : String?
     let date : String
     let explanation : String
     let mediaType : String
     let serviceVersion : String
-    let thumbnailUrl : String? // Ignored of not a video
+    let thumbnailUrl : String? // Is ignored if not a video
     let title : String
     let url : String
     

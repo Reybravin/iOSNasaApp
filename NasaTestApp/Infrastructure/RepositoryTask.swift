@@ -8,8 +8,11 @@
 import Foundation
 
 struct RepositoryTask: Cancellable {
+    
     let networkTask: NetworkCancellable?
+    
     func cancel() {
         networkTask?.cancel()
     }
+    
 }

@@ -18,7 +18,7 @@ public enum DataTransferError: Error {
     case tooManyRequests
     case networkFailure(NetworkError)
     case resolvedNetworkFailure(Error)
-    case invalidParameters(String, String)
+    case invalidParameters(code: String, message: String)
     case invalidCredentials(String)
     case missingUserCredentials
     case invalidToken(String)
@@ -31,7 +31,7 @@ public enum DataTransferError: Error {
 
     var code : String {
         switch self {
-        case .invalidParameters(let code, let message):
+        case .invalidParameters(let code, _):
             if code.isEmpty {
                 return "Error"
             } else {
@@ -48,7 +48,7 @@ public enum DataTransferError: Error {
         case .parsing(_): return NSLocalizedString("Parsing error", comment: "")
         case .networkFailure(let err): return getNetworkFailureErrorDescription(err: err)
         case .resolvedNetworkFailure(_): return NSLocalizedString("Resolved Network Failure", comment: "")
-        case .invalidParameters(let code, let message): return message
+        case .invalidParameters(_, let message): return message
         case .invalidCredentials(let message): return message
         case .invalidToken(let message): return message
         case .emailAlreadyConfirmed(let message): return message
@@ -86,7 +86,7 @@ struct DataTransferErrorMapper {
                 if let data = data {
                     if let dataString = String(data: data, encoding: .utf8) {
                         debugPrint(dataString as Any)
-                        return .invalidParameters("", dataString)
+                        return .invalidParameters(code: "", message: dataString)
                     }
                 } else {
                     return .genericError400 }
@@ -110,9 +110,9 @@ struct DataTransferErrorMapper {
                 if let data = data {
                     if let dataString = String(data: data, encoding: .utf8) {
                         debugPrint(dataString as Any)
-                        return .invalidParameters("Code 409", dataString)
+                        return .invalidParameters(code: "Code 409", message: dataString)
                     }
-                    return .invalidParameters("Code 409", "Unknown error")
+                    return .invalidParameters(code: "Code 409", message: "Unknown error")
                 } else {
                     return .conflict
                 }

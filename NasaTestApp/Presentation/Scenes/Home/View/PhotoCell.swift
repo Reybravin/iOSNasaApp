@@ -19,14 +19,12 @@ class PhotoCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     func configureView(with viewModel: PhotoCellViewModel) {
         self.viewModel = viewModel
-        self.photoImageView?.setImage(with: viewModel.imageUrl)
+        if let imageUrl = viewModel.imageUrl {
+            self.photoImageView?.setImage(with: imageUrl)
+        }
         self.photoTitleLabel?.text = viewModel.title
         self.photoSubtitleLabel?.text = viewModel.subtitle
     }

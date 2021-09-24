@@ -11,10 +11,6 @@ public protocol DataTransferService {
     typealias CompletionHandler<T> = (Result<T, Error>) -> Void
     
     @discardableResult
-    func requestWithDecodableSuccess<T: Decodable, E: ResponseRequestable>(with endpoint: E,
-                                                       completion: @escaping CompletionHandler<T>) -> NetworkCancellable?
-    
-    @discardableResult
     func request<T: Decodable, E: ResponseRequestable>(with endpoint: E,
                                                        completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where E.Response == T
     
@@ -54,23 +50,6 @@ public final class DefaultDataTransferService {
 
 extension DefaultDataTransferService: DataTransferService {
     
-    public func requestWithDecodableSuccess<T, E>(with endpoint: E, completion: @escaping CompletionHandler<T>) -> NetworkCancellable? where T : Decodable, E : ResponseRequestable {
-        return self.networkService.request(endpoint: endpoint) { result in
-            #if DEBUG
-            print(result)
-            #endif
-            switch result {
-            case .success(let data):
-                let result: Result<T, Error> = self.decodeWithServerStatus(data: data, decoder: endpoint.responseDecoder)
-                DispatchQueue.main.async { return completion(result) }
-            case .failure(let error):
-                self.errorLogger.log(error: error)
-                let error = self.resolve(networkError: error)
-                DispatchQueue.main.async { return completion(.failure(error)) }
-            }
-        }
-    }
-   
     public func urlString(endPoint: Requestable) -> String {
         return networkService.urlString(endPoint: endPoint)
     }
@@ -81,8 +60,8 @@ extension DefaultDataTransferService: DataTransferService {
             print(result)
             #endif
             switch result {
-            case .success(let data):
-                let result: Result<Void, Error> = .success(() as! Void) //self.decode(data: data, decoder: endpoint.responseDecoder)
+            case .success(_):
+                let result: Result<Void, Error> = .success(() as! Void)
                 DispatchQueue.main.async { return completion(result) }
             case .failure(let error):
                 self.errorLogger.log(error: error)
@@ -163,7 +142,9 @@ public final class DefaultDataTransferErrorLogger: DataTransferErrorLogger {
     }
 }
 
+
 // MARK: - Error Resolver
+
 public class DefaultDataTransferErrorResolver: DataTransferErrorResolver {
     public init() { }
     public func resolve(error: NetworkError) -> Error {
@@ -171,7 +152,9 @@ public class DefaultDataTransferErrorResolver: DataTransferErrorResolver {
     }
 }
 
+
 // MARK: - Response Decoders
+
 public class EmptyResponseDecoder: ResponseDecoder {
     public init() { }
     
