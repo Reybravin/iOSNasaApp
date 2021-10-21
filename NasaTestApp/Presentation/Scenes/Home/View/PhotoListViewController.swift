@@ -6,14 +6,15 @@
 //
 
 import UIKit
-
+import Combine
 
 class PhotoListViewController: UIViewController, Alertable, Asyncable {
     
     private var tableHeaderView : PhotoListTableHeaderView!
     private var viewModel : PhotoListViewModelInterface!
     private var viewControllersFactory : HomeViewControllersFactory!
- 
+    private var cancellables = [AnyCancellable]()
+
     static func create(with viewModel: PhotoListViewModelInterface, viewControllersFactory: HomeViewControllersFactory) -> PhotoListViewController {
         let vc = PhotoListViewController()
         vc.viewModel = viewModel
@@ -58,7 +59,24 @@ class PhotoListViewController: UIViewController, Alertable, Asyncable {
     
     private func setupView(){
         title = "NASA Photos"
+        setupNavigationBar()
         addTableView()
+    }
+    
+    private func setupNavigationBar(){
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .white
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        } else {
+            navigationController?.navigationBar.barTintColor = .black
+            navigationController?.navigationBar.isTranslucent = false
+            navigationController?.navigationBar.tintColor = UIColor.white
+            navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        }
     }
     
     private func addTableView(){
@@ -81,13 +99,14 @@ class PhotoListViewController: UIViewController, Alertable, Asyncable {
         
         viewModel.isLoading.observe(on: self) { [weak self] in self?.handleIsLoading($0) }
         viewModel.errorText.observe(on: self) { [weak self] in self?.showError($0) }
-        viewModel.headerImageUrl.observe(on: self) { [weak self] in self?.handleHeaderImageUrlUpdated($0) }
+        //viewModel.headerImageUrl.observe(on: self) { [weak self] in self?.handleHeaderImageUrlUpdated($0) }
         viewModel.cellViewModels.observe(on: self) { [weak self] _ in self?.tableView.reloadData() }
+        viewModel.headerImageUrlPublisher.sink() { [weak self] in self?.handleHeaderImageUrlUpdated($0) }.store(in: &cancellables)
         
     }
 
     private func removeObservers() {
-        viewModel.headerImageUrl.remove(observer: self)
+        //viewModel.headerImageUrl.remove(observer: self)
         viewModel.errorText.remove(observer: self)
         viewModel.isLoading.remove(observer: self)
         viewModel.cellViewModels.remove(observer: self)

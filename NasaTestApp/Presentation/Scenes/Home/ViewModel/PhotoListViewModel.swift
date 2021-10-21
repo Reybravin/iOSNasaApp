@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 protocol PhotoListViewModelInput {
     func viewDidAppear()
@@ -14,8 +15,9 @@ protocol PhotoListViewModelInput {
 protocol PhotoListViewModelOutput {
     var isLoading : Observable<Bool> { get }
     var errorText : Observable<String> { get }
-    var headerImageUrl : Observable<URL?> { get }
+    //var headerImageUrl : Observable<URL?> { get }
     var cellViewModels : Observable<[PhotoCellViewModel]> { get }
+    var headerImageUrlPublisher: Published<URL?>.Publisher { get }
 }
 
 protocol PhotoListViewModelInterface : PhotoListViewModelInput, PhotoListViewModelOutput {}
@@ -28,6 +30,9 @@ final class PhotoListViewModel : PhotoListViewModelInterface {
     private var epicImagesDataTask : Cancellable?
     private var epicImages : [EpicImage] = []
 
+    @Published var headerImageUrl : URL? = nil
+    var headerImageUrlPublisher: Published<URL?>.Publisher { $headerImageUrl }
+    
     init(nasaDataRepository: NasaDataRepositoryInterface){
         self.nasaDataRepository = nasaDataRepository
     }
@@ -41,7 +46,7 @@ final class PhotoListViewModel : PhotoListViewModelInterface {
     
     //MARK: Output
     
-    let headerImageUrl : Observable<URL?> = Observable(nil)
+    //let headerImageUrl : Observable<URL?> = Observable(nil)
     let cellViewModels : Observable<[PhotoCellViewModel]> = Observable([])
     let isLoading : Observable<Bool> = Observable(false)
     let errorText : Observable<String> = Observable("")
@@ -77,7 +82,7 @@ extension PhotoListViewModel {
 
     private func processApodSuccessResponse(response: Apod) {
         if let url = URL(string: response.url) {
-            self.headerImageUrl.value = url
+            self.headerImageUrl = url
         }
     }
     
